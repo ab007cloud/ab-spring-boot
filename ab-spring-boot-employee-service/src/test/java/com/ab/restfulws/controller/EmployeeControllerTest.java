@@ -22,8 +22,8 @@ import com.ab.restfulws.repository.EmployeeContactRepository;
 import com.ab.restfulws.service.EmployeeService;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(EmployeeServiceController.class)
-class EmployeeServiceControllerTest {
+@WebMvcTest(EmployeeController.class)
+class EmployeeControllerTest {
 	@MockBean
 	private EmployeeService employeeService;
 
