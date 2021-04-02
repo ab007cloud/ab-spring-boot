@@ -30,9 +30,7 @@ public class EmployeeService {
 		return employeeRepository.findById(employeeId).orElse(null);
 	}
 
-	public Employee getEmployeeByEmployeName(String employeeName) {
-		return employeeRepository.findByEmployeeName(employeeName);
-	}
+
 
 	public String deleteEmployeeByEmployeeId(int employeeId) {
 		employeeRepository.deleteById(employeeId);

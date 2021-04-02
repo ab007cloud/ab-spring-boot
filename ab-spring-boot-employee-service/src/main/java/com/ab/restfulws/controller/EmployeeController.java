@@ -32,11 +32,7 @@ public class EmployeeController {
 
 	}
 
-	@GetMapping("/employee/name/{employeeName}")
-	public Employee getEmployeeByName(@PathVariable String employeeName) {
-		return employeeService.getEmployeeByEmployeName(employeeName);
 
-	}
 
 	@PostMapping("/employee/save")
 	public Employee saveEmployee(@RequestBody Employee employee) {

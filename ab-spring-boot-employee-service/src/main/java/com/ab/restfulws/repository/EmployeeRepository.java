@@ -9,7 +9,6 @@ import com.ab.restfulws.model.Employee;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	
 	
-	/*Find by Column name */
-	public Employee findByEmployeeName(String employeeName);
+
 
 }
