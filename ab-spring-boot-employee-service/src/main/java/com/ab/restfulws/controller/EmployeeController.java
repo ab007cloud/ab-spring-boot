@@ -15,6 +15,7 @@ import com.ab.restfulws.model.Employee;
 import com.ab.restfulws.service.EmployeeService;
 
 @RestController
+
 public class EmployeeController {
 
 	@Autowired
@@ -31,8 +32,6 @@ public class EmployeeController {
 		return employeeService.getEmployeeByEmployeeId(employeeId);
 
 	}
-
-
 
 	@PostMapping("/employee/save")
 	public Employee saveEmployee(@RequestBody Employee employee) {
