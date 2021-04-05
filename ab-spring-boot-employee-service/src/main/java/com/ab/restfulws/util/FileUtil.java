@@ -1,6 +1,8 @@
 package com.ab.restfulws.util;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +33,17 @@ public class FileUtil {
 			log.error("CSV parse error {}", e);
 		}
 		return users;
+	}
+
+	public static File convertMultiPartFileToFile(MultipartFile multipartFile) {
+
+		File file = new File(multipartFile.getOriginalFilename());
+		try (FileOutputStream fileOutputStream = new FileOutputStream(file)) {
+			fileOutputStream.write(multipartFile.getBytes());
+		} catch (Exception e) {
+			log.error("Error Converting File {}", e);
+		}
+		return file;
 	}
 
 }

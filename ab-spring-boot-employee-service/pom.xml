@@ -102,6 +102,16 @@
 		</dependency>
 
 		<!-- Enable Swagger 2 -->
+
+
+		<!-- aws-java-sdk-s3 -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-s3</artifactId>
+			<version>1.11.991</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
