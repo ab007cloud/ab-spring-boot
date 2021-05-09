@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ab.restfulws.model.AuthenticationRequest;
 import com.ab.restfulws.model.AuthenticationResponse;
-import com.ab.restfulws.service.JWTUserDetailsService;
+import com.ab.restfulws.service.JwtUserDetailsService;
 import com.ab.restfulws.util.JwtTokenUtil;
 
 /**
@@ -32,11 +32,10 @@ public class JwtAuthenticationController {
 	private JwtTokenUtil jwtTokenUtil;
 
 	@Autowired
-	private JWTUserDetailsService userDetailsService;
+	private JwtUserDetailsService userDetailsService;
 
 	@PostMapping("/authenticate")
-	public ResponseEntity<?> authenticate(@RequestBody AuthenticationRequest authenticationRequest)
-			throws Exception {
+	public ResponseEntity<?> authenticate(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
 
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
@@ -55,6 +54,12 @@ public class JwtAuthenticationController {
 		} catch (BadCredentialsException e) {
 			throw new Exception(e);
 		}
+	}
+
+	@PostMapping("/register")
+	public ResponseEntity<?> registerJwtUser(@RequestBody AuthenticationRequest authenticationRequest)
+			throws Exception {
+		return ResponseEntity.ok(userDetailsService.registerJwtUser(authenticationRequest));
 	}
 
 }
